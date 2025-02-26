@@ -1,0 +1,1 @@
+python examples/run_rl.py --env mahjong --algorithm dqn --cuda 1 --num_episodes 500 --log_dir experiments/mahjong_dqn_1_gpu/ --save_every 50

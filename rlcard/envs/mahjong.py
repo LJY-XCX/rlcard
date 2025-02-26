@@ -16,7 +16,7 @@ class MahjongEnv(Env):
         super().__init__(config)
         self.action_id = card_encoding_dict
         self.de_action_id = {self.action_id[key]: key for key in self.action_id.keys()}
-        self.state_shape = [[6, 34, 4] for _ in range(self.num_players)]
+        self.state_shape = [[6, 27, 4] for _ in range(self.num_players)]
         self.action_shape = [None for _ in range(self.num_players)]
 
     def _extract_state(self, state):
@@ -74,7 +74,7 @@ class MahjongEnv(Env):
             action (string): the action that will be passed to the game engine.
         '''
         action = self.de_action_id[action_id]
-        if action_id < 34:
+        if action_id < 27:
             candidates = self.game.get_legal_actions(self.game.get_state(self.game.round.current_player))
             for card in candidates:
                 if card.get_str() == action:
