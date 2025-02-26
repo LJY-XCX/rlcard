@@ -44,7 +44,7 @@ class MahjongRound:
 
             
             self.last_player = self.current_player
-            self.current_player = (self.player_before_act + 1) % 4
+            self.current_player = (self.player_before_act + 1) % 2
             self.dealer.deal_cards(players[self.current_player], 1)
             self.valid_act = False
 
@@ -75,7 +75,7 @@ class MahjongRound:
                 self.current_player = player.player_id
             else:
                 self.last_player = self.current_player
-                self.current_player = (self.current_player + 1) % 4
+                self.current_player = (self.current_player + 1) % 2
                 self.dealer.deal_cards(players[self.current_player], 1)
 
         #hand_len = [len(p.hand) for p in players]
