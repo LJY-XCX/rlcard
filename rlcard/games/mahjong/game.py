@@ -113,7 +113,7 @@ class MahjongGame:
         Returns:
             (int): The number of actions. There are 4 actions (call, raise, check and fold)
         '''
-        return 38
+        return 30 ## original 38
 
     def get_num_players(self):
         ''' return the number of players in Mahjong

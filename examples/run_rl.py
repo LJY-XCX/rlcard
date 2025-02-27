@@ -20,6 +20,7 @@ def train(args):
 
     # Check whether gpu is available
     device = get_device()
+    # from IPython import embed; embed()
         
     # Seed numpy, torch, random
     set_seed(args.seed)

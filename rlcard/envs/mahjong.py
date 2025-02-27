@@ -16,7 +16,8 @@ class MahjongEnv(Env):
         super().__init__(config)
         self.action_id = card_encoding_dict
         self.de_action_id = {self.action_id[key]: key for key in self.action_id.keys()}
-        self.state_shape = [[6, 27, 4] for _ in range(self.num_players)]
+        # from IPython import embed; embed()
+        self.state_shape = [[4, 27, 4] for _ in range(self.num_players)]
         self.action_shape = [None for _ in range(self.num_players)]
 
     def _extract_state(self, state):
@@ -58,9 +59,9 @@ class MahjongEnv(Env):
         '''
         _, player, _ = self.game.judger.judge_game(self.game)
         if player == -1:
-            payoffs = [0, 0, 0, 0]
+            payoffs = [0, 0]
         else:
-            payoffs = [-1, -1, -1, -1]
+            payoffs = [-1, -1]
             payoffs[player] = 1
         return np.array(payoffs)
 

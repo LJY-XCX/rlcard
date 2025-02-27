@@ -187,10 +187,10 @@ class MahjongJudger:
         for card in tmp_cards:
             _type = card.split("-")[0]
             _trait = card.split("-")[1]
-            if _type == 'dragons' or _type == 'winds':
-                continue
-            else:
-                _dict_by_type[_type].append(_trait)
+            # if _type == 'dragons' or _type == 'winds':
+            #     continue
+            # else:
+            _dict_by_type[_type].append(_trait)
         for _type in _dict_by_type.keys():
             values = sorted(_dict_by_type[_type])
             if len(values) > 2:
